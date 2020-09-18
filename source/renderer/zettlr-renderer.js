@@ -489,6 +489,8 @@ class ZettlrRenderer {
     this._toolbar.setSearch(term)
     this.beginSearch(term)
     if (forceOpen) this._ipc.send('force-open', term)
+    this._toolbar.setSearch(`"${term}"`);
+    this.beginSearch(`"${term}"`);
   }
 
   /**
